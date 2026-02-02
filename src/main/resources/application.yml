@@ -1,12 +1,22 @@
 spring:
   profiles:
-    active: dev
+    active: prod
+  config:
+    import: aws-parameterstore:/profile-service-app/prod/
 
 management:
   endpoints:
     web:
       exposure:
-        include: health
+        include: health, info
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: ${TEAM_NAME}
+    version: 1.0.0
 
 logging:
   level:
