@@ -20,13 +20,13 @@ public class Member {
     @Column(nullable = false)
     private int age;
     @Column(nullable = false)
-    private String MBTI;
+    private String mbti;
 
     public static Member from(SaveMemberRequest request) {
         return Member.builder()
                 .name(request.getName())
                 .age(request.getAge())
-                .MBTI(request.getMBTI())
+                .mbti(request.getMbti())
                 .build();
     }
 }

@@ -12,14 +12,14 @@ public class GetMemberResponse {
     private final Long id;
     private final String name;
     private final Integer age;
-    private final String MBTI;
+    private final String mbti;
 
     public static GetMemberResponse from(Member member) {
         return GetMemberResponse.builder()
                 .id(member.getId())
                 .name(member.getName())
                 .age(member.getAge())
-                .MBTI(member.getMBTI())
+                .mbti(member.getMbti())
                 .build();
     }
 }
