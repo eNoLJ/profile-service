@@ -21,6 +21,7 @@ public class Member {
     private int age;
     @Column(nullable = false)
     private String mbti;
+    private String profile;
 
     public static Member from(SaveMemberRequest request) {
         return Member.builder()
@@ -28,6 +29,10 @@ public class Member {
                 .age(request.getAge())
                 .mbti(request.getMbti())
                 .build();
+    }
+
+    public void profileUpload(String profile) {
+        this.profile = profile;
     }
 }
 
